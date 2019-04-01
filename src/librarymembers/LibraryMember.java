@@ -11,12 +11,24 @@ public abstract class LibraryMember{
 	
 	int  timeLimit;
 	
+	public int getTimeLimit() {
+		return timeLimit;
+	}
+
 	ArrayList<Book> history;
 	
 	// Why is it abstract?
-	 abstract ArrayList<Book> getTheHistory();
+	 abstract public ArrayList<Book> getTheHistory();
 	
 	//ArrayList will be added ?
 	 // getTheHistory 
 	
+	 
+	 public void reduceCapacity() {
+		 maxNumberOfBooks--;
+	 }
+	 
+	 public void increaseCapacity() {
+		 maxNumberOfBooks++;
+	 }
 }

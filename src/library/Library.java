@@ -55,7 +55,8 @@ class Library{
 		FileScanner.nextLine(); // Satýrlarý bitirmeyi unutma
 	}
 	
-	void borrowBook(int Tick) { // sadece printedlar borrowlanabilir
+	void borrowBook(int Tick) { // sadece printedlar borrowlanabilir 
+		// !!! checkleri ekle, þuan hiç check yokk WP grubundakileri dikkate al
 		
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
@@ -70,11 +71,43 @@ class Library{
 	
 	
 	
+	void returnBook(int Tick) {
+		int borrowedBookID=FileScanner.nextInt();
+		int borrowerID=FileScanner.nextInt();
+		// casting yapmayý unutma !!!!
+		Printed choosenBook= (Printed)  books[borrowedBookID] ;
+		
+		if(choosenBook.deadLine<Tick) {
+			this.totalFee+=Tick-choosenBook.deadLine;
+		}
+		choosenBook.returnBook(members[borrowerID]);
+		
+		
+		FileScanner.nextLine();
+	}
 	
 	
+	void extendBook(int Tick) {
+		int borrowedBookID=FileScanner.nextInt();
+		int borrowerID=FileScanner.nextInt();
+		// casting yapmayý unutma !!!!
+		Printed choosenBook= (Printed)  books[borrowedBookID] ;
+		
+		if(choosenBook.deadLine<Tick) {
+			choosenBook.extend(members[borrowerID], Tick);
+		}
+		
+		
+		
+	}
 	
-	
-	
+	void readInLibrary(int Tick) {
+		int borrowedBookID=FileScanner.nextInt();
+		int borrowerID=FileScanner.nextInt();
+		// casting yapmayý unutma !!!!    BUNU IKISI DE OKUYABILIR
+		Printed choosenBook= (Printed)  books[borrowedBookID] ;
+		
+	}
 	
 	
 	

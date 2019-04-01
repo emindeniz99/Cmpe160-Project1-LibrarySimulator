@@ -20,7 +20,7 @@ public Academic(int id){ // Constructor lar public mi olmalý?
 
 
 @Override
-ArrayList<Book> getTheHistory() {
+public ArrayList<Book> getTheHistory() {
 	// TODO Auto-generated method stub
 	
 	return history;
