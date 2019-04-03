@@ -5,7 +5,7 @@ import java.util.*;
 import books.Book;
 public abstract class LibraryMember{
 	
-	int id;
+	public int id;
 	
 	int maxNumberOfBooks;
 	
@@ -15,7 +15,9 @@ public abstract class LibraryMember{
 		return timeLimit;
 	}
 
-	ArrayList<Book> history;
+	ArrayList<Book> history=new ArrayList<Book>();
+	
+	ArrayList<Book> currentBooks=new ArrayList<Book>();
 	
 	// Why is it abstract?
 	 abstract public ArrayList<Book> getTheHistory();
@@ -30,5 +32,16 @@ public abstract class LibraryMember{
 	 
 	 public void increaseCapacity() {
 		 maxNumberOfBooks++;
+	 }
+	 
+	 
+	 public ArrayList<Book> getCurrentBooks() {
+		 
+		 return currentBooks;
+		 
+	 }
+	 
+	 public int getMaxNumberOfBooks() {
+		 return maxNumberOfBooks;
 	 }
 }

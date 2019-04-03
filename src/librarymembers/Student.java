@@ -6,17 +6,24 @@ import books.Book;
 
 public class Student extends LibraryMember{
 	
+
+
+	
+	
+	public Student(int id){
+		this.id=id;
+		
+	maxNumberOfBooks=10;
+		
+	timeLimit=3;
+		 	}
 	
 	
 	
-int 	maxNumberOfBooks=10;
-int 	timeLimit=50;
+
 	// No permission for Handwritten books
 
-public Student(int id){
-	this.id=id;
-	
-}
+
 	@Override
 	public ArrayList<Book> getTheHistory() {
 		// TODO Auto-generated method stub

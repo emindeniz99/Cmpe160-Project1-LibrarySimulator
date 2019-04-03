@@ -4,7 +4,7 @@ import librarymembers.LibraryMember;
 
 public abstract class Book{
 	
-	int bookID;
+	public int bookID;
 	String bookType;
 	
 	public boolean isTaken;

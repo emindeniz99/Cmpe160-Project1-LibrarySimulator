@@ -9,10 +9,14 @@ import librarymembers.LibraryMember;
 
 public class Printed extends Book implements ReadInLibrary,Borrow{
 	
-	public int deadLine;
+	 int deadLine;
 	boolean isExtended;
 	
 	
+	
+	public int getDeadline() {
+		return deadLine;
+	}
 	
 /*
 	
@@ -29,13 +33,18 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	
 	 // implementing Read in Lib
 	public void borrowBook(LibraryMember member, int tick) {
-		
+//		System.out.println("hello");
 		ArrayList<Book> history=member.getTheHistory();
 		history.add(this); // böyle olur mu?
+		
+		ArrayList<Book> curr=member.getCurrentBooks();
+		curr.add(this); // böyle olur mu?
+		
 		deadLine=member.getTimeLimit()+tick;
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity();
+		System.out.println("azaldý"+member.getMaxNumberOfBooks());
 		
 		
 	}
@@ -83,6 +92,17 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
+		
+		ArrayList<Book> curr=member.getCurrentBooks();
+		int deleteIndex=-1;
+		for(int i=0;i<curr.size();i++) {
+			if(curr.get(i).bookID==this.bookID) {
+				deleteIndex=i;
+			}
+			
+		}
+		if(deleteIndex!=-1)
+		curr.remove(deleteIndex); // remove ýn obje alan yöntemi de mi var???
 		
 		deadLine=0;
 		this.isTaken=false;
