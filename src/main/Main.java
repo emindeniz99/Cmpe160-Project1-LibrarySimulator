@@ -55,7 +55,8 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		// The name of the input file is the only argument of the program
-		File inputFile = new File(args[0]);
+//		File inputFile = new File(args[0]);
+		File inputFile = new File("src/test.txt");
 		
 		Scanner scanner = new Scanner(inputFile);
 		
@@ -95,5 +96,9 @@ public class Main {
 			
 		}
 		scanner.close();
+		
+		
+	
+		
 	}
 }

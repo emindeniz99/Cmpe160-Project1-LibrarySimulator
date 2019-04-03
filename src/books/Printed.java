@@ -15,8 +15,6 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	
 	
 /*
-	int bookID;
-	String bookType;
 	
 	public boolean isTaken;
 	
@@ -45,10 +43,10 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	//implement for RÝN
 	public void extend(LibraryMember member, int tick) {
 		
+		deadLine+=member.getTimeLimit();
+		isExtended=true;
 		
-		
-		
-		
+		//do checks in Library class
 		
 		
 		
@@ -64,7 +62,11 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	// for Borrow
 	public void readBook(LibraryMember member) {
 		
-		
+		ArrayList<Book> history=member.getTheHistory();
+		history.add(this); // böyle olur mu?
+		this.isTaken=true;
+		this.whoHas=member;
+		member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
 		
 		
 		
@@ -81,6 +83,13 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
+		
+		deadLine=0;
+		this.isTaken=false;
+		this.whoHas=null;
+		member.increaseCapacity();
+		
+		
 		
 	}
 	

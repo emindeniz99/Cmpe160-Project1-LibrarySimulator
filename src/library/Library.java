@@ -8,18 +8,26 @@ import librarymembers.Student;
 import books.Book;
 import books.Printed;
 import books.Handwritten;
-class Library{
+public class Library{
 	
 	LibraryMember[] members;
 	Book[] books;
 	
-	int firstBook=1;
-	int lastBook=0; // index of last book
-	int firstMember=1;
-	int lastMember=0;
+	int firstBook=0;
+	int lastBook=-1; // index of last book , -1 means no book
+	int firstMember=0;
+	int lastMember=-1;
 	Scanner FileScanner;
 	
 	private int totalFee;
+	
+	private LibraryMember getMemberByID(int id) {
+		return members[id-1];
+	}
+	
+	private Book getBookByID(int id) {
+		return books[id-1];
+	}
 	
 	public Library(Scanner input) {
 		
@@ -30,20 +38,27 @@ class Library{
 	}
 	
 	
-	void addBook() {
-		
-		lastBook++;
+	public void addBook() {
 		String BookType=  FileScanner.next();
-		if(BookType.equals("P"))
-			books[lastBook]=new Printed(lastBook);
 		
-		if(BookType.equals("H"))
-			books[lastBook]=new Handwritten(lastBook);
-				
+		
+		if(BookType.equals("P")) {
+			lastBook++;
+			books[lastBook]=new Printed(lastBook+1);
+		}
+			
+		
+		if(BookType.equals("H")) {
+			lastBook++;
+			books[lastBook]=new Handwritten(lastBook+1);
+		}
+			
+		for(int i =0;i<10;i++) System.out.print(books[i]);		
+		System.out.println();
 		FileScanner.nextLine();
 	}
 	
-	void addMember() {
+	public void addMember() {
 		lastMember++;
 		String BookType=  FileScanner.next();
 		if(BookType.equals("S"))
@@ -55,7 +70,7 @@ class Library{
 		FileScanner.nextLine(); // Satýrlarý bitirmeyi unutma
 	}
 	
-	void borrowBook(int Tick) { // sadece printedlar borrowlanabilir 
+	 public void borrowBook(int Tick) { // sadece printedlar borrowlanabilir 
 		// !!! checkleri ekle, þuan hiç check yokk WP grubundakileri dikkate al
 		
 		int borrowedBookID=FileScanner.nextInt();
@@ -71,7 +86,7 @@ class Library{
 	
 	
 	
-	void returnBook(int Tick) {
+	public void returnBook(int Tick) {
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!
@@ -87,7 +102,7 @@ class Library{
 	}
 	
 	
-	void extendBook(int Tick) {
+	public void extendBook(int Tick) {
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!
@@ -101,12 +116,14 @@ class Library{
 		
 	}
 	
-	void readInLibrary(int Tick) {
+	public void readInLibrary() {
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!    BUNU IKISI DE OKUYABILIR
 		Printed choosenBook= (Printed)  books[borrowedBookID] ;
+		LibraryMember theMember=members[borrowerID];
 		
+		choosenBook.readBook(theMember);
 	}
 	
 	
