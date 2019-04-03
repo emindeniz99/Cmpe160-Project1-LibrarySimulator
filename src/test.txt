@@ -1,19 +1,569 @@
-53
-1 H
+111
+2	S
+2	A
+1	P
+1	P
+3	1	1
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+4	1	1
+3	1	1
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+4	1	1
+3	1	2
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+4	1	2
+
+OUTPUT SHOULD BE:
+Created new member: Student [id: 1]
+Created new member: Academic [id: 2]
+Created new book: Printed [id: 1]
+Created new book: Printed [id: 2]
+The book [1] was borrowed by member [1]
+Created new book: Handwritten [id: 3]
+Created new book: Handwritten [id: 4]
+Created new book: Handwritten [id: 5]
+Created new book: Handwritten [id: 6]
+Created new book: Handwritten [id: 7]
+Created new book: Handwritten [id: 8]
+Created new book: Handwritten [id: 9]
+Created new book: Handwritten [id: 10]
+Created new book: Handwritten [id: 11]
+Created new book: Handwritten [id: 12]
+Created new book: Handwritten [id: 13]
+Created new book: Handwritten [id: 14]
+Created new book: Handwritten [id: 15]
+Created new book: Handwritten [id: 16]
+Created new book: Handwritten [id: 17]
+Created new book: Handwritten [id: 18]
+Created new book: Handwritten [id: 19]
+Created new book: Handwritten [id: 20]
+Created new book: Handwritten [id: 21]
+The book [1] was returned by member [1]: Fee: 0
+The book [1] was borrowed by member [1]
+Created new book: Handwritten [id: 22]
+Created new book: Handwritten [id: 23]
+Created new book: Handwritten [id: 24]
+Created new book: Handwritten [id: 25]
+Created new book: Handwritten [id: 26]
+Created new book: Handwritten [id: 27]
+Created new book: Handwritten [id: 28]
+Created new book: Handwritten [id: 29]
+Created new book: Handwritten [id: 30]
+Created new book: Handwritten [id: 31]
+Created new book: Handwritten [id: 32]
+Created new book: Handwritten [id: 33]
+Created new book: Handwritten [id: 34]
+Created new book: Handwritten [id: 35]
+Created new book: Handwritten [id: 36]
+Created new book: Handwritten [id: 37]
+Created new book: Handwritten [id: 38]
+Created new book: Handwritten [id: 39]
+Created new book: Handwritten [id: 40]
+Created new book: Handwritten [id: 41]
+Created new book: Handwritten [id: 42]
+Created new book: Handwritten [id: 43]
+The book [1] was returned by member [1]: Fee: 3
+The book [1] was borrowed by member [2]
+Created new book: Handwritten [id: 44]
+Created new book: Handwritten [id: 45]
+Created new book: Handwritten [id: 46]
+Created new book: Handwritten [id: 47]
+Created new book: Handwritten [id: 48]
+Created new book: Handwritten [id: 49]
+Created new book: Handwritten [id: 50]
+Created new book: Handwritten [id: 51]
+Created new book: Handwritten [id: 52]
+Created new book: Handwritten [id: 53]
+Created new book: Handwritten [id: 54]
+Created new book: Handwritten [id: 55]
+Created new book: Handwritten [id: 56]
+Created new book: Handwritten [id: 57]
+Created new book: Handwritten [id: 58]
+Created new book: Handwritten [id: 59]
+Created new book: Handwritten [id: 60]
+Created new book: Handwritten [id: 61]
+Created new book: Handwritten [id: 62]
+Created new book: Handwritten [id: 63]
+Created new book: Handwritten [id: 64]
+Created new book: Handwritten [id: 65]
+Created new book: Handwritten [id: 66]
+Created new book: Handwritten [id: 67]
+Created new book: Handwritten [id: 68]
+Created new book: Handwritten [id: 69]
+Created new book: Handwritten [id: 70]
+Created new book: Handwritten [id: 71]
+Created new book: Handwritten [id: 72]
+Created new book: Handwritten [id: 73]
+Created new book: Handwritten [id: 74]
+Created new book: Handwritten [id: 75]
+Created new book: Handwritten [id: 76]
+Created new book: Handwritten [id: 77]
+Created new book: Handwritten [id: 78]
+Created new book: Handwritten [id: 79]
+Created new book: Handwritten [id: 80]
+Created new book: Handwritten [id: 81]
+Created new book: Handwritten [id: 82]
+Created new book: Handwritten [id: 83]
+Created new book: Handwritten [id: 84]
+Created new book: Handwritten [id: 85]
+Created new book: Handwritten [id: 86]
+Created new book: Handwritten [id: 87]
+Created new book: Handwritten [id: 88]
+Created new book: Handwritten [id: 89]
+Created new book: Handwritten [id: 90]
+Created new book: Handwritten [id: 91]
+Created new book: Handwritten [id: 92]
+Created new book: Handwritten [id: 93]
+Created new book: Handwritten [id: 94]
+Created new book: Handwritten [id: 95]
+Created new book: Handwritten [id: 96]
+Created new book: Handwritten [id: 97]
+Created new book: Handwritten [id: 98]
+Created new book: Handwritten [id: 99]
+Created new book: Handwritten [id: 100]
+Created new book: Handwritten [id: 101]
+Created new book: Handwritten [id: 102]
+Created new book: Handwritten [id: 103]
+The book [1] was returned by member [2]: Fee: 11
+Total Fee: 14
+
+
+members -> the books read 
+1 -> 2
+2 -> 1
+3 -> 3
+4 -> 4
+
+totalfees -> 11
+
+
+17
+1 P
 1 P 
 1 H
 1 P
 2 S
-2 A
-2 A
+2 S
+2 S
 2 S
 3 1 1
-3 1 2
-3 1 3
 3 2 1
-3 2 4 
-4 2 3
-4 2 4
+1 P
+1 P
+5 1 1 
+1 P
+1 P
+1 P
+4 1 1
+
+
+
+members -> the books read 
+1 -> 2
+2 -> 1
+3 -> 3
+4 -> 4
+
+totalfees -> 11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+111
+2	S
+2	A
+1	P
+1	P
+3	1	1
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+4	1	1
+3	1	1
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+4	1	1
+3	1	2
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+1	H
+4	1	2
+
+OUTPUT SHOULD BE:
+Created new member: Student [id: 1]
+Created new member: Academic [id: 2]
+Created new book: Printed [id: 1]
+Created new book: Printed [id: 2]
+The book [1] was borrowed by member [1]
+Created new book: Handwritten [id: 3]
+Created new book: Handwritten [id: 4]
+Created new book: Handwritten [id: 5]
+Created new book: Handwritten [id: 6]
+Created new book: Handwritten [id: 7]
+Created new book: Handwritten [id: 8]
+Created new book: Handwritten [id: 9]
+Created new book: Handwritten [id: 10]
+Created new book: Handwritten [id: 11]
+Created new book: Handwritten [id: 12]
+Created new book: Handwritten [id: 13]
+Created new book: Handwritten [id: 14]
+Created new book: Handwritten [id: 15]
+Created new book: Handwritten [id: 16]
+Created new book: Handwritten [id: 17]
+Created new book: Handwritten [id: 18]
+Created new book: Handwritten [id: 19]
+Created new book: Handwritten [id: 20]
+Created new book: Handwritten [id: 21]
+The book [1] was returned by member [1]: Fee: 0
+The book [1] was borrowed by member [1]
+Created new book: Handwritten [id: 22]
+Created new book: Handwritten [id: 23]
+Created new book: Handwritten [id: 24]
+Created new book: Handwritten [id: 25]
+Created new book: Handwritten [id: 26]
+Created new book: Handwritten [id: 27]
+Created new book: Handwritten [id: 28]
+Created new book: Handwritten [id: 29]
+Created new book: Handwritten [id: 30]
+Created new book: Handwritten [id: 31]
+Created new book: Handwritten [id: 32]
+Created new book: Handwritten [id: 33]
+Created new book: Handwritten [id: 34]
+Created new book: Handwritten [id: 35]
+Created new book: Handwritten [id: 36]
+Created new book: Handwritten [id: 37]
+Created new book: Handwritten [id: 38]
+Created new book: Handwritten [id: 39]
+Created new book: Handwritten [id: 40]
+Created new book: Handwritten [id: 41]
+Created new book: Handwritten [id: 42]
+Created new book: Handwritten [id: 43]
+The book [1] was returned by member [1]: Fee: 3
+The book [1] was borrowed by member [2]
+Created new book: Handwritten [id: 44]
+Created new book: Handwritten [id: 45]
+Created new book: Handwritten [id: 46]
+Created new book: Handwritten [id: 47]
+Created new book: Handwritten [id: 48]
+Created new book: Handwritten [id: 49]
+Created new book: Handwritten [id: 50]
+Created new book: Handwritten [id: 51]
+Created new book: Handwritten [id: 52]
+Created new book: Handwritten [id: 53]
+Created new book: Handwritten [id: 54]
+Created new book: Handwritten [id: 55]
+Created new book: Handwritten [id: 56]
+Created new book: Handwritten [id: 57]
+Created new book: Handwritten [id: 58]
+Created new book: Handwritten [id: 59]
+Created new book: Handwritten [id: 60]
+Created new book: Handwritten [id: 61]
+Created new book: Handwritten [id: 62]
+Created new book: Handwritten [id: 63]
+Created new book: Handwritten [id: 64]
+Created new book: Handwritten [id: 65]
+Created new book: Handwritten [id: 66]
+Created new book: Handwritten [id: 67]
+Created new book: Handwritten [id: 68]
+Created new book: Handwritten [id: 69]
+Created new book: Handwritten [id: 70]
+Created new book: Handwritten [id: 71]
+Created new book: Handwritten [id: 72]
+Created new book: Handwritten [id: 73]
+Created new book: Handwritten [id: 74]
+Created new book: Handwritten [id: 75]
+Created new book: Handwritten [id: 76]
+Created new book: Handwritten [id: 77]
+Created new book: Handwritten [id: 78]
+Created new book: Handwritten [id: 79]
+Created new book: Handwritten [id: 80]
+Created new book: Handwritten [id: 81]
+Created new book: Handwritten [id: 82]
+Created new book: Handwritten [id: 83]
+Created new book: Handwritten [id: 84]
+Created new book: Handwritten [id: 85]
+Created new book: Handwritten [id: 86]
+Created new book: Handwritten [id: 87]
+Created new book: Handwritten [id: 88]
+Created new book: Handwritten [id: 89]
+Created new book: Handwritten [id: 90]
+Created new book: Handwritten [id: 91]
+Created new book: Handwritten [id: 92]
+Created new book: Handwritten [id: 93]
+Created new book: Handwritten [id: 94]
+Created new book: Handwritten [id: 95]
+Created new book: Handwritten [id: 96]
+Created new book: Handwritten [id: 97]
+Created new book: Handwritten [id: 98]
+Created new book: Handwritten [id: 99]
+Created new book: Handwritten [id: 100]
+Created new book: Handwritten [id: 101]
+Created new book: Handwritten [id: 102]
+Created new book: Handwritten [id: 103]
+The book [1] was returned by member [2]: Fee: 11
+Total Fee: 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16
+1 P
+1 P 
+2 S
+2 S
+3 1 1
+3 2 1
+2 A
+2 S
+2 A
+2 S
+2 A
+2 S
+2 A
+2 S
+4 2 1
+4 1 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4 2 1
 6 1 1
 6 1 2

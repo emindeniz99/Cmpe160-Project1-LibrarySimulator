@@ -10,7 +10,7 @@ import librarymembers.LibraryMember;
 public class Printed extends Book implements ReadInLibrary,Borrow{
 	
 	 int deadLine;
-	boolean isExtended;
+	boolean isExtended=false;
 	
 	
 	
@@ -47,11 +47,11 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		curr.add(this); // böyle olur mu?
 		
 		deadLine=member.getTimeLimit()+tick;
-		System.out.println("deadlineý"+deadLine);
+		System.out.println("deadlineý     "+deadLine);
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity();
-		System.out.println("azaldý"+member.getMaxNumberOfBooks()+"\n");
+//		System.out.println("azaldý"+member.getMaxNumberOfBooks()+"\n");
 		
 		
 	}
@@ -103,15 +103,15 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		System.out.println("SAYÝÝÝ 111");
 		
 		ArrayList<Book> curr=member.getCurrentBooks();
-		int deleteIndex=-1;
-		for(int i=0;i<curr.size();i++) {
-			if(curr.get(i).bookID==this.bookID) {
-				deleteIndex=i;
-			}
-			
-		}
-		if(deleteIndex!=-1)
-		curr.remove(deleteIndex); // remove ýn obje alan yöntemi de mi var???
+//		int deleteIndex=-1;
+//		for(int i=0;i<curr.size();i++) {
+//			if(curr.get(i).bookID==this.bookID) {
+//				deleteIndex=i;
+//			}
+//			
+//		}
+//		if(deleteIndex!=-1)
+		curr.remove(this); // remove ýn obje alan yöntemi de mi var???
 		
 		deadLine=0;
 		this.isTaken=false;

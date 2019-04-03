@@ -15,8 +15,8 @@ public class Academic extends LibraryMember{
 
 public Academic(int id){ // Constructor lar public mi olmalý?
 	this.id=id;
-	maxNumberOfBooks=20;
-	timeLimit=50;
+	this.maxNumberOfBooks=20;
+	this.timeLimit=50;
 }
 
 
