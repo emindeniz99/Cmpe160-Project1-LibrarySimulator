@@ -13,10 +13,10 @@ public class Library{
 	LibraryMember[] members;
 	Book[] books;
 	
-	int firstBook=0;
-	int lastBook=-1; // index of last book , -1 means no book
-	int firstMember=0;
-	int lastMember=-1;
+	int firstBook=1;
+	int lastBook=0; // index of last book , 0 means no book
+	int firstMember=1;
+	int lastMember=0;
 	Scanner FileScanner;
 	
 	private int totalFee;
@@ -32,8 +32,8 @@ public class Library{
 	public Library(Scanner input) {
 		
 		 FileScanner=input;
-		members=new LibraryMember[1000000];
-		books=new Book[1000000];
+		members=new LibraryMember[999999]; // 10**6 mý olacak hocaya sor, anlatýmda eksik var
+		books=new Book[999999];
 	
 	}
 	
@@ -44,13 +44,13 @@ public class Library{
 		
 		if(BookType.equals("P")) {
 			lastBook++;
-			books[lastBook]=new Printed(lastBook+1);
+			books[lastBook-1]=new Printed(lastBook);
 		}
 			
 		
 		if(BookType.equals("H")) {
 			lastBook++;
-			books[lastBook]=new Handwritten(lastBook+1);
+			books[lastBook-1]=new Handwritten(lastBook);
 		}
 			
 		for(int i =0;i<10;i++) System.out.print(books[i]);		
@@ -59,27 +59,53 @@ public class Library{
 	}
 	
 	public void addMember() {
-		lastMember++;
-		String BookType=  FileScanner.next();
-		if(BookType.equals("S"))
-			members[lastMember]=new Student(lastMember);
+		String MemberType=  FileScanner.next();
 		
-		if(BookType.equals("A"))
-			members[lastMember]=new Academic(lastMember);
-				
-		FileScanner.nextLine(); // Satýrlarý bitirmeyi unutma
+		
+		if(MemberType.equals("A")) {
+			lastMember++;
+			members[lastMember-1]=new Academic(lastMember);
+		}
+			
+		
+		if(MemberType.equals("S")) {
+			lastMember++;
+			members[lastMember-1]=new Student(lastMember);
+		}
+			
+		for(int i =0;i<10;i++) System.out.print(members[i]);		
+		System.out.println();
+		FileScanner.nextLine();
 	}
 	
 	 public void borrowBook(int Tick) { // sadece printedlar borrowlanabilir 
 		// !!! checkleri ekle, þuan hiç check yokk WP grubundakileri dikkate al
-		
+			 
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!
-		Printed choosenBook= (Printed)  books[borrowedBookID] ;
-		if( choosenBook.getIsTaken()==false ) {
-			choosenBook.borrowBook(members[borrowerID],Tick);
+	if(borrowedBookID<=lastBook && borrowerID<=lastMember)	if(getBookByID(borrowedBookID) instanceof Printed){
+			
+			Printed choosenBook= (Printed)  books[borrowedBookID] ;
+			
+			LibraryMember who=getMemberByID(borrowerID);
+			
+			if( choosenBook.getIsTaken()==false ) {
+				
+				int debt=0; //borç
+				for(int i =0;i<who.getTheHistory().size();i++) {
+					who.getTheHistory().get(i).
+					
+					
+				}
+				
+				
+				
+				
+				choosenBook.borrowBook(members[borrowerID],Tick);
+			}
 		}
+		
 		FileScanner.nextLine();
 	}
 	
@@ -130,5 +156,20 @@ public class Library{
 	
 	
 	
+	
+	
+	public Book[] getBooks() {
+		return books;
+		
+	}
+	
+	public LibraryMember[] getMembers() {
+		return members;
+	}
+	
+	public int getTotalFee() {
+		return totalFee;
+		
+	}
 	
 }

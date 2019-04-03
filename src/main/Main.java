@@ -76,6 +76,7 @@ public class Main {
 			else if(type==2) {
 				action = new Action(Type.addMember);
 				simulation.timerTick(action);
+//				System.out.println("gg");
 			}
 			else if(type==3) {
 				action = new Action(Type.borrowBook);
