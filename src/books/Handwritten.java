@@ -28,6 +28,7 @@ public class Handwritten extends Book implements ReadInLibrary{
 	@Override
 	public void readBook(LibraryMember member) {
 		// TODO Auto-generated method stub
+	
 		ArrayList<Book> history=member.getTheHistory();
 		history.add(this); // böyle olur mu?
 		this.isTaken=true;

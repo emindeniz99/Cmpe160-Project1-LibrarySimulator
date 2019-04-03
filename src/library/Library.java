@@ -52,10 +52,10 @@ public class Library{
 			lastBook++;
 			books[lastBook-1]=new Handwritten(lastBook);
 		}
-			
+		System.out.println(lastBook+". Book basýldý"+BookType);	
 //		for(int i =0;i<10;i++) System.out.print(books[i]);		
 //		System.out.println();
-//		FileScanner.nextLine();
+		FileScanner.nextLine();
 	}
 	
 	public void addMember() {
@@ -72,10 +72,10 @@ public class Library{
 			lastMember++;
 			members[lastMember-1]=new Student(lastMember);
 		}
-			
+		System.out.println(lastMember+". Kiþi basýldý"+MemberType);
 //		for(int i =0;i<10;i++) System.out.print(members[i]);		
 //		System.out.println();
-//		FileScanner.nextLine();
+		FileScanner.nextLine();
 	}
 	
 	
@@ -102,6 +102,9 @@ public class Library{
 	 public void borrowBook(int Tick) { // sadece printedlar borrowlanabilir 
 		// !!! checkleri ekle, þuan hiç check yokk WP grubundakileri dikkate al
 			 
+		 System.out.println("----------------------TÝCK "+ Tick);
+		 
+		 
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!
@@ -133,7 +136,7 @@ public class Library{
 //					System.out.println("kim" +who.id +"---- book"+ choosenBook.bookID);
 //					
 					if(who.getMaxNumberOfBooks()>0) {
-						System.out.println("---------kim" +who.id +"---- book"+ choosenBook.bookID);
+						System.out.println("--------" +who.id +". kiþi aldý---- kitap"+ choosenBook.bookID);
 						choosenBook.borrowBook(this.getMemberByID(borrowerID),Tick);
 //						System.out.println("drrd");
 //						for(int i =0;i<10;i++) System.out.println(who.getCurrentBooks().get(i));		
@@ -182,20 +185,29 @@ public class Library{
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!
-		Printed choosenBook= (Printed) this.getBookByID(borrowedBookID) ;
-		
+//		Printed choosenBook= (Printed) this.getBookByID(borrowedBookID) ;  
+		System.out.println("TÝCKS "+Tick);
 		LibraryMember who=getMemberByID(borrowerID);
 		
-		if(borrowedBookID<=lastBook&&borrowerID<=lastMember){
-			if(who.getCurrentBooks().contains(choosenBook)){
-		if(choosenBook.getDeadline()>Tick) {
-			this.totalFee+=Tick-choosenBook.getDeadline();
+		if(borrowedBookID<=lastBook+1&&borrowerID<=lastMember+1){
+//			if(who.getCurrentBooks().contains(getBookByID(borrowedBookID))){
+			if(doesMemberHoldBook(who,getBookByID(borrowedBookID))){
+				System.out.println("efe");
+				Printed choosenBook= (Printed) this.getBookByID(borrowedBookID) ;
+				System.out.println("dead  "+ choosenBook.getDeadline() +"   tick "+ Tick);
+		if(choosenBook.getDeadline()<Tick) {
+			int penalty = Tick-choosenBook.getDeadline();
+			this.totalFee+= penalty;
+			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		}
 		choosenBook.returnBook(this.getMemberByID(borrowerID));
 		
 		}
+//		FileScanner.nextLine();
+	}
+		
 		FileScanner.nextLine();
-	}}
+	}
 	
 	
 	public void extendBook(int Tick) {
@@ -208,28 +220,56 @@ public class Library{
 		
 		if (borrowedBookID <= lastBook && borrowerID <= lastMember) {
 			if (who.getCurrentBooks().contains(choosenBook)) {
-				if (choosenBook.getDeadline() < Tick) {
-					this.totalFee += Tick - choosenBook.getDeadline();
+				if ((choosenBook.getDeadline() <= Tick) && !choosenBook.getIsExtended()) {
+					choosenBook.extend(this.getMemberByID(borrowerID),Tick);
 				}
-				choosenBook.returnBook(this.getMemberByID(borrowerID));
-
+				
+   // BURADA CURRENT ARRAYI KULLANDIÐIM ÝÇÝN bu printed kitap mý diye test etmedim.
 			}
 
 		}
 
-		if (choosenBook.getDeadline() < Tick) {
-			choosenBook.extend(members[borrowerID], Tick);
-		}
+//		if (choosenBook.getDeadline() < Tick) {
+//			choosenBook.(members[borrowerID], Tick);
+//		}
+		FileScanner.nextLine();
 	}
 	
 	public void readInLibrary() {
 		int borrowedBookID=FileScanner.nextInt();
 		int borrowerID=FileScanner.nextInt();
 		// casting yapmayý unutma !!!!    BUNU IKISI DE OKUYABILIR
-		Printed choosenBook= (Printed)  books[borrowedBookID] ;
-		LibraryMember theMember=members[borrowerID];
+if(borrowedBookID<=lastBook && borrowerID<=lastMember) {
+	LibraryMember who=getMemberByID(borrowerID);
+	
+
+	if(getBookByID(borrowedBookID).getIsTaken()==false){
+	
+			
+			if( getBookByID(borrowedBookID) instanceof Printed  ) {
 		
-		choosenBook.readBook(theMember);
+		
+				Printed choosenBook= (Printed)  getBookByID(borrowedBookID);
+		
+		
+				choosenBook.readBook(who);
+		
+			}
+			
+			if( getBookByID(borrowedBookID) instanceof Handwritten  ) {
+				
+				if(who instanceof Academic){
+				Handwritten choosenBook= (Handwritten)  getBookByID(borrowedBookID);
+		
+		
+				choosenBook.readBook(who);
+				}
+			}
+	
+	}}
+		
+		
+FileScanner.nextLine();
 	}
 	
 	

@@ -15,7 +15,7 @@ public class Student extends LibraryMember{
 		
 	maxNumberOfBooks=10;
 		
-	timeLimit=3;
+	timeLimit=20;
 		 	}
 	
 	

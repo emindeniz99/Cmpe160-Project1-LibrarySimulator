@@ -18,6 +18,12 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		return deadLine;
 	}
 	
+	public boolean getIsExtended() {
+		
+		return this.isExtended;
+	}
+	
+	
 /*
 	
 	public boolean isTaken;
@@ -41,10 +47,11 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		curr.add(this); // böyle olur mu?
 		
 		deadLine=member.getTimeLimit()+tick;
+		System.out.println("deadlineý"+deadLine);
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity();
-		System.out.println("azaldý"+member.getMaxNumberOfBooks());
+		System.out.println("azaldý"+member.getMaxNumberOfBooks()+"\n");
 		
 		
 	}
@@ -76,10 +83,10 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
+		member.increaseCapacity();
 		
-		
-		
-		
+		this.isTaken=false;
+		this.whoHas=null;
 		
 	}
 
@@ -92,6 +99,8 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
+		
+		System.out.println("SAYÝÝÝ 111");
 		
 		ArrayList<Book> curr=member.getCurrentBooks();
 		int deleteIndex=-1;

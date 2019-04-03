@@ -7,6 +7,10 @@ import librarysimulator.*;
 import librarysimulator.Action.Type;
 
 
+
+
+import library.*;
+
 /*
  * 
  * INPUT FORMAT:
@@ -99,7 +103,7 @@ public class Main {
 		scanner.close();
 		
 		
-	
-		
+//	
+//		System.out.println("TOTAL FEE   "+simulation.library.getTotalFee());
 	}
 }

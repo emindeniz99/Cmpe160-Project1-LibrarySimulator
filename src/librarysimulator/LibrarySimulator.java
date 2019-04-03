@@ -15,7 +15,7 @@ public class LibrarySimulator {
 	// The variable that represents the unit time
 	private int tick = 0;
 	
-	Library library;
+	public Library library; //public yaptým
 	Action action;
 	
 	public LibrarySimulator(Scanner scanner) {
@@ -23,7 +23,7 @@ public class LibrarySimulator {
 	}
 	
 	public void timerTick(Action action) {
-		
+//	System.out.println(library.getTotalFee());	
 		tick++;
 		
 		this.action = action;
