@@ -1,4 +1,46 @@
-23
+17
+1	P
+1	P
+1	H
+1	H
+1	P
+2	S
+2	S
+2	A
+2	A
+3	1	1
+6	2	1
+4	2	1
+4	1	1
+3	2	2
+6	3	3
+6	4	4
+6	5	4
+
+OUTPUT SHOULD BE:
+Created new book: Printed [id: 1]
+Created new book: Printed [id: 2]
+Created new book: Handwritten [id: 3]
+Created new book: Handwritten [id: 4]
+Created new book: Printed [id: 5]
+Created new member: Student [id: 1]
+Created new member: Student [id: 2]
+Created new member: Academic [id: 3]
+Created new member: Academic [id: 4]
+The book [1] was borrowed by member [1]
+The book [2] was read in library by member [1]
+The book [2] was returned by member [1]
+The book [1] was returned by member [1]: Fee: 0
+The book [2] was borrowed by member [2]
+The book [3] was read in library by member [3]
+The book [4] was read in library by member [4]
+The book [5] was read in library by member [4]
+[books.Printed@42a57993, books.Printed@75b84c92]
+[books.Printed@75b84c92]
+[books.Handwritten@6bc7c054]
+[books.Handwritten@232204a1, books.Printed@4aa298b7]
+
+13
 1	P
 1	P
 1	P
@@ -7,7 +49,17 @@
 2 A
 3 1 1
 3 2 1
+4 1 1
+3 1 1
+3 2 1
+4 1 1
+3 1 1
+
+
+
 6 1 22
+
+
 6 1 1
 6 2 1
 6 3 1

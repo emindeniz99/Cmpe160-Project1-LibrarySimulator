@@ -6,9 +6,6 @@ import java.util.Scanner;
 import librarysimulator.*;
 import librarysimulator.Action.Type;
 
-
-
-
 import library.*;
 
 /*
@@ -55,54 +52,48 @@ import library.*;
  */
 
 public class Main {
-	
+
 	public static void main(String[] args) throws FileNotFoundException {
-		
+
 		// The name of the input file is the only argument of the program
 //		File inputFile = new File(args[0]);
 		File inputFile = new File("src/test.txt");
-		
+
 		Scanner scanner = new Scanner(inputFile);
-		
+
 		LibrarySimulator simulation = new LibrarySimulator(scanner);
 		int numberOfEvents = scanner.nextInt();
-		
-		for(int i=0;i<numberOfEvents;i++) {
-			
+
+		for (int i = 0; i < numberOfEvents; i++) {
+
 			int type = scanner.nextInt();
-			
+
 			Action action;
-			
-			if(type==1) {
-				 action = new Action(Type.addBook);
-				 simulation.timerTick(action);
-			}
-			else if(type==2) {
+
+			if (type == 1) {
+				action = new Action(Type.addBook);
+				simulation.timerTick(action);
+			} else if (type == 2) {
 				action = new Action(Type.addMember);
 				simulation.timerTick(action);
 //				System.out.println("gg");
-			}
-			else if(type==3) {
+			} else if (type == 3) {
 				action = new Action(Type.borrowBook);
 				simulation.timerTick(action);
-			}
-			else if(type==4){
+			} else if (type == 4) {
 				action = new Action(Type.returnBook);
 				simulation.timerTick(action);
-			}
-			else if(type==5){
+			} else if (type == 5) {
 				action = new Action(Type.extendBook);
 				simulation.timerTick(action);
-			}
-			else if(type==6){
+			} else if (type == 6) {
 				action = new Action(Type.readInLibrary);
 				simulation.timerTick(action);
 			}
-			
+
 		}
 		scanner.close();
-		
-		
+
 //	
 //		System.out.println("TOTAL FEE   "+simulation.library.getTotalFee());
 	}
