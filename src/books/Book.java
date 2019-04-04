@@ -20,7 +20,7 @@ public abstract class Book{
 	}
 	
 	
-	abstract void returnBook(LibraryMember member) ;
+	abstract public void returnBook(LibraryMember member) ;
 	
 	//getter
 	public boolean getIsTaken() {

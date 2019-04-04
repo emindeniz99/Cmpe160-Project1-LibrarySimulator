@@ -34,7 +34,8 @@ public class Handwritten extends Book implements ReadInLibrary{
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
-		
+		ArrayList<Book> curr=member.getCurrentBooks();
+		curr.add(this);
 		
 
 	}

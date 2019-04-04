@@ -77,17 +77,15 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	
 	// for Borrow
 	public void readBook(LibraryMember member) {
-		
+		ArrayList<Book> curr=member.getCurrentBooks();
 		ArrayList<Book> history=member.getTheHistory();
 		history.add(this); // böyle olur mu?
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
-		member.increaseCapacity();
+		deadLine=9999999; // büyük bir sayý
 		
-		this.isTaken=false;
-		this.whoHas=null;
-		
+		curr.add(this);
 	}
 
 	
@@ -112,7 +110,7 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 //		}
 //		if(deleteIndex!=-1)
 		curr.remove(this); // remove ýn obje alan yöntemi de mi var???
-		
+//		curr.
 		deadLine=0;
 		this.isTaken=false;
 		this.whoHas=null;

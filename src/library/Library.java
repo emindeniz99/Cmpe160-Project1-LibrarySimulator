@@ -183,16 +183,30 @@ public class Library{
 			if(who.getCurrentBooks().contains(getBookByID(borrowedBookID))){
 				//			if(doesMemberHoldBook(who,getBookByID(borrowedBookID))){
 //				System.out.println("efe");
-				Printed choosenBook= (Printed) this.getBookByID(borrowedBookID) ;
+				
 //				System.out.println("deaEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEd  "+ choosenBook.getDeadline() +"   tick "+ Tick);
-			int penalty = 0;
+		
+				
+				
+				if(this.getBookByID(borrowedBookID) instanceof Printed) {
+				Printed choosenBook= (Printed) this.getBookByID(borrowedBookID);
+				
+				int penalty = 0;
 				if(choosenBook.getDeadline()<Tick) {
 					 penalty = Tick-choosenBook.getDeadline();
 					this.totalFee+= penalty;
 //					System.out.println(who.id+"kim      book "+choosenBook.bookID+   "  ceza:"+ penalty);
 				}
-				choosenBook.returnBook(this.getMemberByID(borrowerID));
-				System.out.println(who.id+"kim      book "+choosenBook.bookID+   "  ceza:"+ penalty+"   Tot: "+this.getTotalFee());
+				
+				}
+				
+				
+				this.getBookByID(borrowedBookID).returnBook(this.getMemberByID(borrowerID));
+				
+				
+				
+				
+				System.out.println(who.id+"kim      book "+this.getBookByID(borrowedBookID).bookID+   "   Tot: "+this.getTotalFee());
 			}
 			//		FileScanner.nextLine();
 		}
@@ -255,7 +269,7 @@ public class Library{
 
 				}
 
-				if( getBookByID(borrowedBookID) instanceof Handwritten  ) {
+				else 	if( getBookByID(borrowedBookID) instanceof Handwritten  ) {
 
 					if(who instanceof Academic){
 						Handwritten choosenBook= (Handwritten)  getBookByID(borrowedBookID);
