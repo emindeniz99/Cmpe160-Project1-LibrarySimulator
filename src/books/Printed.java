@@ -7,32 +7,49 @@ import librarymembers.LibraryMember;
 
 public class Printed extends Book implements ReadInLibrary, Borrow {
 
-	int deadLine;
-	boolean isExtended = false;
+	
+	
+	
+	private int deadLine;
+	private boolean isExtended = false;
 
+	
+	
+	/** returns deadline of book
+	 * @return DeadLine of the book
+	 */
 	public int getDeadline() {
 		return deadLine;
 	}
 
+	
+	
+	/** gets if extended or not
+	 * @return if extended or not
+	 */
 	public boolean getIsExtended() {
 
 		return this.isExtended;
 	}
-
-	/*
-	 * 
-	 * public boolean isTaken;
-	 * 
-	 * LibraryMember whoHas;
-	 * 
-	 * 
-	 */
+	
+	
+	/** Creates an Handwritten Book with the ID.
+	 * @param ID of Handwritten Book
+	*/
 	public Printed(int bookID) {
 		super(bookID, "P"); // Bu gerekli mi?? Yoksa otomatik çaðrýlýyor muydu?
 
 	}
 
-	// implementing Read in Lib
+	
+	/** borrow book, add the history, 
+	 * set deadline, Taken or not, Who has
+	 * reduces the capacity of member
+	 *
+	 * @param member Who wants borrow
+	 * @param tick  Time or Process Number
+	 */
+
 	public void borrowBook(LibraryMember member, int tick) {
 //		System.out.println("hello");
 		ArrayList<Book> history = member.getTheHistory();
@@ -62,7 +79,9 @@ public class Printed extends Book implements ReadInLibrary, Borrow {
 
 	}
 
-	// for Borrow
+	/**
+	 * 
+	 */
 	public void readBook(LibraryMember member) {
 		ArrayList<Book> curr = member.getCurrentBooks();
 		ArrayList<Book> history = member.getTheHistory();
@@ -80,7 +99,11 @@ public class Printed extends Book implements ReadInLibrary, Borrow {
 
 		curr.add(this);
 	}
-
+/** returns book
+ * set deadline, Taken or not, Who has
+ * increase capacity of member, if book borrowed
+ * @param member who wants to return book
+ */
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
