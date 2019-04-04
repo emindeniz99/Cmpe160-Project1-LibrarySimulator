@@ -123,9 +123,9 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		deadLine=0;
 		this.isTaken=false;
 		this.whoHas=null;
-		this.inReadingLibrary=false; 
-		if(!this.inReadingLibrary)	member.increaseCapacity();
 		
+		if(!this.inReadingLibrary)	member.increaseCapacity();
+		this.inReadingLibrary=false; 
 		
 		
 	}

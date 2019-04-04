@@ -44,4 +44,18 @@ public abstract class LibraryMember{
 	 public int getMaxNumberOfBooks() {
 		 return maxNumberOfBooks;
 	 }
+	 
+	 
+	 
+	 
+	 
+	 //test
+	 
+	 public void yazdir() {
+		 System.out.print( " id "+this.id);
+		 System.out.print( "  limit "+this.timeLimit);
+		 System.out.print( "  max: "+this.maxNumberOfBooks);
+		 System.out.print( " history: "+this.history.toString());
+		 System.out.print( " elindekiler: "+this.currentBooks);
+	 }
 }

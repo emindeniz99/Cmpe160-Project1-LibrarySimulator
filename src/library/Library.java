@@ -201,15 +201,17 @@ public class Library{
 				}
 
 				System.out.println();
-				System.out.println("iadeden önce"+who.getCurrentBooks().toString() +"");
+//				System.out.println("iadeden önce"+who.getCurrentBooks().toString() +"");
+				who.yazdir();System.out.println();
 				
 				
 				this.getBookByID(borrowedBookID).returnBook(this.getMemberByID(borrowerID));
-				
+				if(this.getBookByID(borrowedBookID).inReadingLibrary) System.out.print("kütüpte");
 				
 				System.out.println(who.id+"kim      book "+this.getBookByID(borrowedBookID).bookID+   "   Tot: "+this.getTotalFee());
-			
-				System.out.println("iadeden sonrs"+who.getCurrentBooks().toString() +"\n");
+			who.yazdir();
+			System.out.println();
+//				System.out.println("iadeden sonrs"+who.getCurrentBooks().toString() +"\n");
 			}
 			//		FileScanner.nextLine();
 		}
@@ -248,6 +250,7 @@ public class Library{
 		//			choosenBook.(members[borrowerID], Tick);
 		//		}
 		FileScanner.nextLine();
+		
 	}
 
 	public void readInLibrary() {
@@ -269,7 +272,8 @@ public class Library{
 
 					choosenBook.readBook(who);
 					System.out.println(who.id+". kiþi ,,Kütüpte okudu kitap: "+choosenBook.bookID);
-					System.out.println(who.getCurrentBooks().toString());
+//					System.out.println(who.getCurrentBooks().toString());
+					who.yazdir();System.out.println();
 				}
 
 				else 	if( getBookByID(borrowedBookID) instanceof Handwritten  ) {
@@ -281,8 +285,8 @@ public class Library{
 						choosenBook.readBook(who);
 
 						System.out.println(who.id+". kiþi ,,Kütüpte okudu kitap: "+choosenBook.bookID);
-					
-						System.out.println(who.getCurrentBooks().toString());
+						who.yazdir();System.out.println();
+//						System.out.println(who.getCurrentBooks().toString());
 						
 					}
 				}

@@ -42,7 +42,7 @@ public class Handwritten extends Book implements ReadInLibrary{
 		
 
 	}
-
+  
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
@@ -53,10 +53,10 @@ public class Handwritten extends Book implements ReadInLibrary{
 		
 		this.isTaken=false;
 		this.whoHas=null;
-		this.inReadingLibrary=false; 
+		
 		if(!this.inReadingLibrary) member.increaseCapacity();
 		
-
+		this.inReadingLibrary=false; 
 		
 	}
 	
