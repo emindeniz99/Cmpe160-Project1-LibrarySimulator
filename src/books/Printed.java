@@ -47,7 +47,7 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		curr.add(this); // böyle olur mu?
 		
 		deadLine=member.getTimeLimit()+tick;
-		System.out.println("deadlineý     "+deadLine);
+//		System.out.println("deadlineý     "+deadLine);
 		this.isTaken=true;
 		this.whoHas=member;
 		member.reduceCapacity();
@@ -100,7 +100,7 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("SAYÝÝÝ 111");
+//		System.out.println("SAYÝÝÝ 111");
 		
 		ArrayList<Book> curr=member.getCurrentBooks();
 //		int deleteIndex=-1;
