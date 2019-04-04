@@ -7,20 +7,20 @@ public abstract class Book {
    private int bookID;
    private	String bookType;
 /**
- * keeps that book is taken or not
+ * Keeps if the book is taken or not
  */
    protected  boolean isTaken;
    /**
-    * keeps who has the book
+    * Keeps who has the book
     */
 	protected LibraryMember whoHas;
 /**
- * keeps the book is being reading in library or not
+ * Keeps whether the book is being reading in library or not
  */
 	protected boolean inReadingLibrary = false;
 
-	/** constructor of book wrt ID and Type
-	 * @param bookID id of Book
+	/** Constructor of book according to ID and Type
+	 * @param bookID ID of Book
 	 * @param bookType Type of Book Handwritten or Printed
 	 */
 	Book(int bookID, String bookType) {
@@ -28,21 +28,21 @@ public abstract class Book {
 		this.bookType = bookType;
 	}
 
-	/** returns the book by the member
-	 * @param member who bringing back
+	/** Returns the book by the member
+	 * @param member who brings back
 	 */
 	abstract public void returnBook(LibraryMember member);
 
 	
-	/** returns if book is taken or not
-	 * @return is the Book Taken or Not
+	/** Returns if book is taken or not
+	 * @return if the Book is Taken or Not
 	*/
 	public boolean getIsTaken() {
 		return isTaken;
 	}
 	
-	/** returns if book has been readed or not
-	 * @return the Book readed in library or Not
+	/** Returns if book has been readed or not
+	 * @return The Book readed in library or Not
 	*/
 	public boolean getInReadingLibrary() {
 		return inReadingLibrary;

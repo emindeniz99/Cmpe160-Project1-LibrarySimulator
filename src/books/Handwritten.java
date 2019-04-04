@@ -26,11 +26,12 @@ public class Handwritten extends Book implements ReadInLibrary {
 
 	}
 
-	@Override
+	
 	/** Creates an employee with the specified name.
 	 * @param lastName The employee’s last name.
 	 * @param firstName The employee’s first name.
 	*/
+	@Override
 	public void readBook(LibraryMember member) {
 		// TODO Auto-generated method stub
 
@@ -48,6 +49,11 @@ public class Handwritten extends Book implements ReadInLibrary {
 
 	}
 
+	/** Returns book
+	 * Sets Taken or not, Who has
+	 * Increases capacity of member, if book borrowed
+	 * @param member who wants to return book
+	 */
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub

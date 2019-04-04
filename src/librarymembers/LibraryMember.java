@@ -26,29 +26,29 @@ public abstract class LibraryMember {
 	// ArrayList will be added ?
 	// getTheHistory
 /**
- * reducer for regulating max Number of book to control no excess borrowed books
+ * Reducer for regulating max Number of book to control no excess borrowed books
  */
 	public void reduceCapacity() {
 		maxNumberOfBooks--;
 	}
 	/**
-	 * increaser for regulating max Number of book to control no excess borrowed books
+	 * Increaser for regulating max Number of book to control no excess borrowed books
 	 */
 	public void increaseCapacity() {
 		maxNumberOfBooks++;
 	}
 
 	
-	/** gets All Books which the member has read
-	 * @return history of readed books
+	/** Gets All Books which the member has read
+	 * @return History of readed books
 	 */
 	public ArrayList<Book> getCurrentBooks() {
 
 		return currentBooks;
 
 	}
-	/** getter method for maximum Number Of Books
-	 * @return maximum number of books
+	/** Getter method for maximum Number Of Books
+	 * @return Maximum number of books
 	 */
 	public int getMaxNumberOfBooks() {
 		return maxNumberOfBooks;

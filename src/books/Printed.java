@@ -99,9 +99,9 @@ public class Printed extends Book implements ReadInLibrary, Borrow {
 
 		curr.add(this);
 	}
-/** returns book
- * set deadline, Taken or not, Who has
- * increase capacity of member, if book borrowed
+/** Returns book
+ * Sets deadline, Taken or not, Who has
+ * Increases capacity of member, if book borrowed
  * @param member who wants to return book
  */
 	@Override

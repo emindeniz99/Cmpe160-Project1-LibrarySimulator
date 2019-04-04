@@ -25,9 +25,9 @@ public class Academic extends LibraryMember {
 	}
 
 	/**
-	 * gets All Books which the member has read
+	 * Gets All Books which the member has read
 	 * 
-	 * @return history of readed books
+	 * @return History of readed books
 	 */
 	@Override
 	public ArrayList<Book> getTheHistory() {

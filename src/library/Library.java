@@ -11,16 +11,16 @@ import books.Handwritten;
 
 /**
  * Reads inputs and checks for validty of events and calls other methods
- * 	organizes all processes
+ * organizes all processes
  * Includes some methods for working as library
  * 
  * <ul>
- *  <li> {@link #addBook} 
- *  <li> {@link #addMember}
- *  <li>{@link #borrowBook}
- *  <li>{@link #returnBook}
- *  <li>{@link #extendBook}
- *  <li>{@link #readInLibrary}
+ *  <li>addBook 
+ *  <li>addMember
+ *  <li>borrowBook
+ *  <li>returnBook
+ *  <li>extendBook
+ *  <li>readInLibrary
  * </ul>
  * 
  * @author Emin Deniz
@@ -51,7 +51,7 @@ public class Library {
 
 	/** Initializes Members and Books Arrays and uses Scanner for reading input
 	 * 
-	 * @param input		to read remaining of the input
+	 * @param input	To read remaining of the input
 	 */
 	public Library(Scanner input) {
 
@@ -127,9 +127,9 @@ public class Library {
 	}
 
 	
-	/** reads Borrower and Borrowed Book and 
-	 * checks validity of the process and
-	 * calls <code>borrowBook</code> method 
+	/**Reads Borrower and Borrowed Book and 
+	 * Checks validity of the process and
+	 * Calls <code>borrowBook</code> method 
 	 * to complete borrowing
 	 * 
 	 * @param Tick process Number, so Time
@@ -208,10 +208,10 @@ public class Library {
 	
 	
 	
-	/** checks and return the book
+	/** Checks and return the book
 	 * Reads Returner and Returned Book and 
-	 * checks validity of the process and
-	 * calls <code>returnBook</code> method 
+	 * Checks validity of the process and
+	 * Calls <code>returnBook</code> method 
 	 *  to complete Returning Process
 	 * @param Tick process Number, so Time
 	 */
@@ -271,10 +271,10 @@ public class Library {
 
 	
 	
-	/** checks and calls <code>extendBook</code> method
+	/** Checks and calls <code>extendBook</code> method
 	 * Reads Extender and Extended Book and 
-	 * checks validity of the process and
-	 * calls <code>returnBook</code> method 
+	 * Checks validity of the process and
+	 * Calls <code>returnBook</code> method 
 	 * 
 	 * @param Tick process Number, so Time
 	 */
@@ -306,9 +306,9 @@ public class Library {
 	}
 	/** checks and calls <code>readBook</code> method
 	 * Reads Borrower and Borrowed Book and 
-	 * checks validity of the process and
-	 * calls <code>readBook</code> method 
-	 * to complete getting book to read in library
+	 * Checks validity of the process and
+	 * Calls <code>readBook</code> method 
+	 * To complete getting book to read in library
 	 * @param Tick process Number, so Time
 	 */
 	public void readInLibrary() {
@@ -353,24 +353,24 @@ public class Library {
 	}
 
 	
-	/** gets Books array which includes all books that are in library
+	/** Gets Books array which includes all books that are in library
 	 * 
-	 * @return all books in Library
+	 * @return All books in Library
 	 */
 	public Book[] getBooks() {
 		return books;
 
 	}
 
-	/** gets Books array which includes all books that are in library
+	/** Gets Books array which includes all books that are in library
 	 * 
-	 * @return all books in Library
+	 * @return All books in Library
 	 */
 	public LibraryMember[] getMembers() {
 		return members;
 	}
 
-	/** gets total fee in Library
+	/** Gets total fee in Library
 	 * 
 	 * @return Total Gains from Those who miss the Deadline for Borrowed Book
 	 */
