@@ -30,10 +30,13 @@ public class Handwritten extends Book implements ReadInLibrary{
 		// TODO Auto-generated method stub
 	
 		ArrayList<Book> history=member.getTheHistory();
-		history.add(this); // böyle olur mu?
+		if (!history.contains(this)) {
+			history.add(this);}
+		
+		this.inReadingLibrary=true; // inLib mi?
 		this.isTaken=true;
 		this.whoHas=member;
-		member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
+	//	member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
 		ArrayList<Book> curr=member.getCurrentBooks();
 		curr.add(this);
 		
@@ -43,10 +46,15 @@ public class Handwritten extends Book implements ReadInLibrary{
 	@Override
 	public void returnBook(LibraryMember member) {
 		// TODO Auto-generated method stub
+		ArrayList<Book> curr=member.getCurrentBooks();
+		
+		curr.remove(this);
+		
 		
 		this.isTaken=false;
 		this.whoHas=null;
-		member.increaseCapacity();
+		this.inReadingLibrary=false; 
+		if(!this.inReadingLibrary) member.increaseCapacity();
 		
 
 		

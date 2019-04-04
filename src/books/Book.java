@@ -11,7 +11,7 @@ public abstract class Book{
 	
 	LibraryMember whoHas;
 	
-	
+	public boolean inReadingLibrary=false;
 	
 	
 	 Book(int bookID,String bookType){

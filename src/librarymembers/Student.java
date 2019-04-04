@@ -13,7 +13,7 @@ public class Student extends LibraryMember{
 	public Student(int id){
 		this.id=id;
 		
-this.maxNumberOfBooks=10;
+this.maxNumberOfBooks=1;
 		
 	this.timeLimit=20;
 		 	}

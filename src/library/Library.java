@@ -199,14 +199,17 @@ public class Library{
 				}
 				
 				}
+
+				System.out.println();
+				System.out.println("iadeden önce"+who.getCurrentBooks().toString() +"");
 				
 				
 				this.getBookByID(borrowedBookID).returnBook(this.getMemberByID(borrowerID));
 				
 				
-				
-				
 				System.out.println(who.id+"kim      book "+this.getBookByID(borrowedBookID).bookID+   "   Tot: "+this.getTotalFee());
+			
+				System.out.println("iadeden sonrs"+who.getCurrentBooks().toString() +"\n");
 			}
 			//		FileScanner.nextLine();
 		}
@@ -265,8 +268,8 @@ public class Library{
 
 
 					choosenBook.readBook(who);
-					System.out.println("Kütüpte okundu");
-
+					System.out.println(who.id+". kiþi ,,Kütüpte okudu kitap: "+choosenBook.bookID);
+					System.out.println(who.getCurrentBooks().toString());
 				}
 
 				else 	if( getBookByID(borrowedBookID) instanceof Handwritten  ) {
@@ -277,7 +280,10 @@ public class Library{
 
 						choosenBook.readBook(who);
 
-						System.out.println("Kütüpte okundu");
+						System.out.println(who.id+". kiþi ,,Kütüpte okudu kitap: "+choosenBook.bookID);
+					
+						System.out.println(who.getCurrentBooks().toString());
+						
 					}
 				}
 

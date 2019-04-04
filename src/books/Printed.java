@@ -41,7 +41,10 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	public void borrowBook(LibraryMember member, int tick) {
 //		System.out.println("hello");
 		ArrayList<Book> history=member.getTheHistory();
-		history.add(this); // böyle olur mu?
+		
+		if (!history.contains(this))
+			history.add(this);
+		
 		
 		ArrayList<Book> curr=member.getCurrentBooks();
 		curr.add(this); // böyle olur mu?
@@ -79,11 +82,17 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 	public void readBook(LibraryMember member) {
 		ArrayList<Book> curr=member.getCurrentBooks();
 		ArrayList<Book> history=member.getTheHistory();
-		history.add(this); // böyle olur mu?
+
+		if (!history.contains(this))
+			history.add(this); // böyle olur mu? // buraya þeyi ekle !!!!! eþsiz olsun historydeki kitaplar,
+								// her kitap bir kere geçmeli
+
 		this.isTaken=true;
 		this.whoHas=member;
-		member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
+	//	member.reduceCapacity(); // Bu olacak mý? max sýnýrýndaysa okuyabilir mi?
 		deadLine=9999999; // büyük bir sayý
+		
+		this.inReadingLibrary=true; 
 		
 		curr.add(this);
 	}
@@ -114,7 +123,8 @@ public class Printed extends Book implements ReadInLibrary,Borrow{
 		deadLine=0;
 		this.isTaken=false;
 		this.whoHas=null;
-		member.increaseCapacity();
+		this.inReadingLibrary=false; 
+		if(!this.inReadingLibrary)	member.increaseCapacity();
 		
 		
 		
