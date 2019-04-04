@@ -11,14 +11,13 @@ import books.Handwritten;
 
 public class Library {
 
-	LibraryMember[] members;
-	Book[] books;
+private	LibraryMember[] members;
+	private Book[] books;
 
-	int firstBook = 1;
-	int lastBook = 0; // index of last book , 0 means no book
-	int firstMember = 1;
-	int lastMember = 0;
-	Scanner FileScanner;
+	private int lastBook = 0; // index of last book , 0 means no book
+
+	private int lastMember = 0;
+private	Scanner FileScanner;
 
 	private int totalFee;
 
@@ -33,8 +32,8 @@ public class Library {
 	public Library(Scanner input) {
 
 		FileScanner = input;
-		members = new LibraryMember[999999]; // 10**6 mý olacak hocaya sor, anlatýmda eksik var
-		books = new Book[999999];
+		members = new LibraryMember[1000000]; // 10**6-1 mý olacak hocaya sor, anlatýmda eksik var
+		books = new Book[1000000];
 
 	}
 
@@ -123,7 +122,7 @@ public class Library {
 						// System.out.println("kim" +who.id +"---- book"+ choosenBook.bookID);
 						//
 						if (who.getMaxNumberOfBooks() > 0) {
-							System.out.println("--------" + who.id + ". kiþi aldý---- kitap" + borrowedBookID);
+							System.out.println("--------" + borrowerID + ". kiþi aldý---- kitap" + borrowedBookID);
 							choosenBook.borrowBook(this.getMemberByID(borrowerID), Tick);
 							// System.out.println("drrd");
 							// for(int i =0;i<10;i++) System.out.println(who.getCurrentBooks().get(i));
@@ -192,10 +191,10 @@ public class Library {
 				System.out.println();
 
 				this.getBookByID(borrowedBookID).returnBook(this.getMemberByID(borrowerID));
-				if (this.getBookByID(borrowedBookID).inReadingLibrary)
+				if (this.getBookByID(borrowedBookID).getInReadingLibrary())
 					System.out.print("kütüpte");
 
-				System.out.println(who.id + "kim      book " + borrowedBookID + "   Tot: "
+				System.out.println(borrowerID + "kim      book " + borrowedBookID + "   Tot: "
 						+ this.getTotalFee());
 				who.yazdir();
 				System.out.println();
@@ -254,7 +253,7 @@ public class Library {
 					Printed choosenBook = (Printed) getBookByID(borrowedBookID);
 
 					choosenBook.readBook(who);
-					System.out.println(who.id + ". kiþi ,,Kütüpte okudu kitap: " + borrowedBookID);
+					System.out.println(borrowerID + ". kiþi ,,Kütüpte okudu kitap: " + borrowedBookID);
 //					System.out.println(who.getCurrentBooks().toString());
 					who.yazdir();
 					System.out.println();
@@ -267,7 +266,7 @@ public class Library {
 
 						choosenBook.readBook(who);
 
-						System.out.println(who.id + ". kiþi ,,Kütüpte okudu kitap: " + borrowedBookID);
+						System.out.println(borrowerID + ". kiþi ,,Kütüpte okudu kitap: " + borrowedBookID);
 						who.yazdir();
 						System.out.println();
 //						System.out.println(who.getCurrentBooks().toString());

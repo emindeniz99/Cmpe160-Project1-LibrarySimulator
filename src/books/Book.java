@@ -11,7 +11,7 @@ private	String bookType;
 
 	protected LibraryMember whoHas;
 
-	public boolean inReadingLibrary = false;
+	protected boolean inReadingLibrary = false;
 
 	Book(int bookID, String bookType) {
 		this.bookID = bookID;
@@ -28,4 +28,10 @@ private	String bookType;
 	public boolean getIsTaken() {
 		return isTaken;
 	}
+	
+	public boolean getInReadingLibrary() {
+		return inReadingLibrary;
+		
+	}
+	
 }

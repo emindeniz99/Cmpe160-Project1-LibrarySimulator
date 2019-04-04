@@ -6,19 +6,19 @@ import books.Book;
 
 public abstract class LibraryMember {
 
-	public int id;
+	protected int id;
 
-	int maxNumberOfBooks;
+	protected int maxNumberOfBooks;
 
-	int timeLimit;
+	protected int timeLimit;
 
 	public int getTimeLimit() {
 		return timeLimit;
 	}
 
-	ArrayList<Book> history = new ArrayList<Book>();
+	protected ArrayList<Book> history = new ArrayList<Book>();
 
-	ArrayList<Book> currentBooks = new ArrayList<Book>();
+	private ArrayList<Book> currentBooks = new ArrayList<Book>();
 
 	// Why is it abstract?
 	abstract public ArrayList<Book> getTheHistory();
